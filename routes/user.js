@@ -1,7 +1,18 @@
 const User  = require('../models/user');
 const express = require("express");
 const router = express.Router();
+const movies = require('../movies_data.json')
 
+router.get('/',async (req,res)=>{
+    try{
+        res.send(movies);
+    }catch(error){
+        res.json({
+            text:"Some error occurred!!",
+        });
+        console.log(error);
+    }
+});
 
 router.get('/users',async (req,res)=>{
     try{
