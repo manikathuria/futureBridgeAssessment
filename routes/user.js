@@ -3,7 +3,7 @@ const express = require("express");
 const router = express.Router();
 const movies = require('../movies_data.json')
 
-router.get('/',async (req,res)=>{
+router.get('/movies',async (req,res)=>{
     try{
         res.send(movies);
     }catch(error){
